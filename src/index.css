@@ -4,7 +4,7 @@
   text-decoration: none;
 }
 
-nav{
+nav {
   height: inherit;
 }
 
@@ -28,6 +28,16 @@ nav{
 
 .div-aside-link {
   display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex !important;
+  margin-left: 5px;
 }
 
 .div-aside-link:hover {
@@ -39,7 +49,20 @@ nav{
   width: 100%;
 }
 
-.img-logo {
+.aside-logo a,.img-logo {
   width: inherit;
   height: inherit;
+  background-image: black;
 }
+
+.table-bordered {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+table{
+  border-collapse:collapse !important;
+  border-radius: 1em !important; 
+  overflow: hidden;
+}
+

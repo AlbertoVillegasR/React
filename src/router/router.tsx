@@ -5,28 +5,34 @@ import ContainerBase from "../components/base/container-base";
 import AddPersonComponent from "../components/intranet/addPerson-component";
 import TableComponent from "../components/intranet/tabla-component";
 
-const Router = createBrowserRouter([
+export const rutas = [
     {
         path: "/",
         element: <ContainerBase />,
-        children:[
+        children: [
             {
-                index:true,
-                element:<Navigate to="/home"></Navigate>
+                index: true,
+                element: <Navigate to="/home" />
             },
             {
-                path:"home",
-                element: <h2>Home Component</h2>
+                path: "home",
+                // element: <h2>Home Component</h2>,
+                children: [
+                    { path: "", element: <h2>Home Component</h2> },
+                    { path: "add", element: <AddPersonComponent /> },
+                    { path: "list", element: <TableComponent /> }
+                ]
             },
             {
                 path: "table",
-                element: <TableComponent />
+                element: <TableComponent />,
             },
             {
-                path: "add-person",
-                element: <AddPersonComponent />
+                path: "person",
+                element: <img className="" src="../../src/components/base/opensource.png" alt=""></img>
             }
         ]
     },
-])
+]
+const Router = createBrowserRouter(rutas)
 export default Router;

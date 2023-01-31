@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom";
 import ContainerBase from "../components/base/container-base";
 import AddPersonComponent from "../components/intranet/addPerson-component";
 import TableComponent from "../components/intranet/tabla-component";
+import OpenModal from "../shared/components/open-modal";
 
 export const rutas = [
     {
@@ -22,16 +23,12 @@ export const rutas = [
                     { path: "add", element: <AddPersonComponent /> },
                     { path: "list", element: <TableComponent /> }
                 ]
-            },
-            {
-                path: "table",
-                element: <TableComponent />,
-            },
-            {
-                path: "person",
-                element: <img className="" src="../../src/components/base/opensource.png" alt=""></img>
             }
         ]
+    },
+    {
+        path: "modal",
+        // element: 
     },
 ]
 const Router = createBrowserRouter(rutas)

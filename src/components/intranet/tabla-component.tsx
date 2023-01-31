@@ -1,5 +1,7 @@
+import { useState } from "react";
 import ContentWithTable from "../../shared/components/contentWithTable";
 import { fakeData } from "../../shared/fakeData/fakeData";
+import  ContainerBase  from "../base/container-base";
 
 const table = {
     tableprops: [
@@ -14,7 +16,7 @@ const table = {
         {
             tooltip: "Agregar",
             className: "btn btn-success",
-            iconFA: "fa fa-trash"
+            iconFA: "fa fa-plus"
         },
         {
             tooltip: "Eliminar",
@@ -25,10 +27,17 @@ const table = {
 }
 
 const TableComponent = (props: any) => {
-
+    const [state , setState] = useState(false)
     const handlerButton = (e: any) => {
-        
+        setState(true)
+        // ContainerBase({
+        //     title: "Hola Mundo",
+        //     iconFA: "fa fa-trash",
+        //     body: <h2></h2>,
+        //     on: true
+        // })
     }
+    console.log("Inicio Tablax")
 
     return (
         <div className="col ">

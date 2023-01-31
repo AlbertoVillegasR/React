@@ -21,9 +21,10 @@ interface ActionButtons {
 
 function ContentWithTable(props: TableProps) {
   const [datos, setDatos] = useState(props.data)
-  useEffect(() => {
-    setDatos(props.data);
-  }, []);
+  console.log("tabla 2")
+  // useEffect(() => {
+  //   setDatos(props.data);
+  // }, []);
   return (
     <div className="table-responsive px-0">
       <table className="table table-striped table-hover align-middle">
@@ -36,7 +37,7 @@ function ContentWithTable(props: TableProps) {
         </thead>
         <tbody>
           {datos.length > 0 ?
-            datos.map((dato, idato) => {
+            props.data.map((dato, idato) => {
               let value = "";
               return <tr key={"table_tr_" + idato}>{
                 props.tableprops.map((prop) => {
@@ -51,9 +52,7 @@ function ContentWithTable(props: TableProps) {
                     </td>
                   }
                   value = dato[prop.field] || "";
-                  console.log(idato);
-
-                  return <td key={"td_" + idato}>{value}</td>;;
+                  return <td key={"td_" + prop.field + "_" + idato }>{value}</td>;;
                 })
               }</tr>;
             })

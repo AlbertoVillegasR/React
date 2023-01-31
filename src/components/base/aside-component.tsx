@@ -45,7 +45,7 @@ export const AsideComponent = () => {
                     </div>
                 </div>
             </div>
-            <div className="p-3 div-aside-link">
+            {/* <div className="p-3 div-aside-link">
                 <Link to="/table" className="text-white aside-link">
                     <i className="fa-solid fa-house me-2"></i>Table</Link>
                 <div id="hide_1" className="hidden">
@@ -60,10 +60,10 @@ export const AsideComponent = () => {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="p-3 div-aside-link">
-                <Link to="/person" className="text-white aside-link">
-                    <i className="fa-solid fa-house me-2"></i>Person
+                <Link to="/modal" className="text-white aside-link">
+                    <i className="fa-solid fa-house me-2"></i>Modal
                 </Link>
             </div>
         </aside>

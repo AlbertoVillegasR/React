@@ -1,13 +1,13 @@
-import path from "path";
 import { createBrowserRouter } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import ContainerBase from "../components/base/container-base";
 import AddPersonComponent from "../components/intranet/addPerson-component";
 import TableComponent from "../components/intranet/tabla-component";
-import OpenModal from "../shared/components/open-modal";
+
 
 export const rutas = [
     {
+        
         path: "/",
         element: <ContainerBase />,
         children: [
@@ -17,7 +17,6 @@ export const rutas = [
             },
             {
                 path: "home",
-                // element: <h2>Home Component</h2>,
                 children: [
                     { path: "", element: <h2>Home Component</h2> },
                     { path: "add", element: <AddPersonComponent /> },
@@ -25,10 +24,6 @@ export const rutas = [
                 ]
             }
         ]
-    },
-    {
-        path: "modal",
-        // element: 
     },
 ]
 const Router = createBrowserRouter(rutas)

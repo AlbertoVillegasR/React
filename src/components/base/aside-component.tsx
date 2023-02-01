@@ -1,7 +1,5 @@
-import { url } from "inspector"
-import React, { ReactNode, useRef, useState } from "react"
+import { ReactNode } from "react"
 import { Link } from "react-router-dom"
-import { rutas } from "../../router/router"
 import imagen from "../../shared/img/opensource.png";
 export const AsideComponent = () => {
 

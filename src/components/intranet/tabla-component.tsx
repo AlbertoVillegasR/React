@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ContentWithTable from "../../shared/components/contentWithTable";
+import { context } from "../../shared/components/ContextComponent";
 import { fakeData } from "../../shared/fakeData/fakeData";
-import  ContainerBase  from "../base/container-base";
+import ContainerBase from "../base/container-base";
 
 const table = {
     tableprops: [
@@ -27,18 +28,37 @@ const table = {
 }
 
 const TableComponent = (props: any) => {
-    const [state , setState] = useState(false)
-    const handlerButton = (e: any) => {
-        setState(true)
-        // ContainerBase({
-        //     title: "Hola Mundo",
-        //     iconFA: "fa fa-trash",
-        //     body: <h2></h2>,
-        //     on: true
-        // })
+    const { propsModal, setPropsModal } = useContext(context)
+    const onClick = () => {
+        console.log("XDD")
     }
-    console.log("Inicio Tablax")
-
+    const handlerButton = (e: any) => {
+        setPropsModal({
+            ...propsModal,
+            title: "Hola",
+            body: <>
+                <div className="row mx-5">
+                    <h2>Hola Mundo</h2>
+                    <button>Hola</button>
+                </div>
+            </>,
+            footer:
+                <>
+                    <span className="text-danger col-auto">* Campos Requeridos</span>
+                    <div className="col"></div>
+                    <div className="col d-flex justify-content-end">
+                        <a className="btn btn-success me-2" onClick={onClick}>
+                            <i className="fa-solid fa-thumbs-up"></i>
+                        </a>
+                        <a className="btn btn-danger d-flex align-items-center" onClick={onClick}>
+                            <i className="fa fa-trash me-2"></i>
+                            <span className=""> Eliminar</span>
+                        </a>
+                    </div>
+                </>,
+            on: true
+        })
+    }
     return (
         <div className="col ">
             <div className="row mx-2">

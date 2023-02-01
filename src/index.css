@@ -40,8 +40,11 @@ nav {
   margin-left: 5px;
 }
 
-.div-aside-link:hover {
-  background: rgb(26, 26, 40);
+.aside-link:hover {
+  background: rgb(51, 51, 74);
+  border-radius: 20px;
+  padding: 10px;
+  transition: padding 300ms;
 }
 
 .aside-logo {
@@ -129,12 +132,9 @@ table {
 
 #close-modal {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-#close-modal .btn {
-  border: none;
+  align-items: center;
+  margin-right: 10px;
 }
 
 #modal-footer {
